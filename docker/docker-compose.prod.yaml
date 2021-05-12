@@ -25,7 +25,6 @@ services:
             target: rtmpie-rtmp
         ports:
             - 1935:1935
-            - 8081:80
             
     database:
         image: mariadb:10.4
