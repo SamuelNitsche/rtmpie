@@ -14,6 +14,8 @@ document.getElementById('buttonIcon').innerHTML = icon({
 
 document.getElementById('playButton').addEventListener('click', () => {
     document.getElementById('buttonWrapper').remove()
+
+    const playerEl = document.createElement('video')
     playerEl.autoplay = true
     playerEl.controls = true
     playerEl.classList.add('w-screen')
