@@ -22,7 +22,7 @@ document.getElementById('playButton').addEventListener('click', () => {
     playerEl.classList.add('h-screen')
     document.getElementsByTagName('body')[0].appendChild(playerEl)
 
-    new Plyr(playerEl);
+    const plyr = new Plyr(video, { controls: ['play-large', 'play', 'current-time', 'mute', 'volume', 'settings', 'pip', 'airplay', 'fullscreen'] });
 
     if (!Hls.isSupported()) {
         playerEl.src = stream_url;
@@ -32,6 +32,11 @@ document.getElementById('playButton').addEventListener('click', () => {
         hls.attachMedia(playerEl);
         window.hls = hls;
     }
+
+    plyr.muted = true
+    setTimeout(() => {
+        plyr.play()
+    }, 500)
 
     // if (FlvJs.isSupported()) {
     //     const playerEl = document.createElement('video')
