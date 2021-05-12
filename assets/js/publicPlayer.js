@@ -22,7 +22,7 @@ document.getElementById('playButton').addEventListener('click', () => {
     playerEl.classList.add('h-screen')
     document.getElementsByTagName('body')[0].appendChild(playerEl)
 
-    const plyr = new Plyr(video, { controls: ['play-large', 'play', 'current-time', 'mute', 'volume', 'settings', 'pip', 'airplay', 'fullscreen'] });
+    const plyr = new Plyr(playerEl, { controls: ['play-large', 'play', 'current-time', 'mute', 'volume', 'settings', 'pip', 'airplay', 'fullscreen'] });
 
     if (!Hls.isSupported()) {
         playerEl.src = stream_url;
