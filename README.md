@@ -43,6 +43,18 @@ docker-compose -f ./docker/docker-compose.prod.yaml up -d
 
 The admin interface is publicly available via port 8080. You can login with the default user `admin` and the password `admin`.
 
+## Usage
+
+### Watch the stream
+
+You can either watch the stream by clicking on the preview image on the admin interface. If you want to embed the stream anywhere else you can access the .m3u8 file via the following url.
+
+**{slug} has to be replaced by the stream name**
+
+```
+http://127.0.0.1:8080/live/{slug}/index.m3u8
+```
+
 ## Credits
 
 RTMPie was built using the following projects:
