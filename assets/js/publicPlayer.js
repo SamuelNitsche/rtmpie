@@ -18,11 +18,9 @@ document.getElementById('playButton').addEventListener('click', () => {
     const playerEl = document.createElement('video')
     playerEl.autoplay = true
     playerEl.controls = true
-    playerEl.classList.add('w-screen')
-    playerEl.classList.add('h-screen')
     document.getElementsByTagName('body')[0].appendChild(playerEl)
 
-    const plyr = new Plyr(playerEl, { controls: ['play-large', 'play', 'current-time', 'mute', 'volume', 'settings', 'pip', 'airplay', 'fullscreen'] });
+    const plyr = new Plyr(playerEl, { controls: ['play-large', 'play', 'mute', 'volume', 'settings', 'pip', 'airplay', 'fullscreen'] });
 
     if (!Hls.isSupported()) {
         playerEl.src = stream_url;
@@ -32,6 +30,10 @@ document.getElementById('playButton').addEventListener('click', () => {
         hls.attachMedia(playerEl);
         window.hls = hls;
     }
+
+    const plyrWrapper = document.getElementsByClassName('plyr')[0]
+    plyrWrapper.classList.add('w-screen')
+    plyrWrapper.classList.add('h-screen')
 
     plyr.muted = true
     setTimeout(() => {
