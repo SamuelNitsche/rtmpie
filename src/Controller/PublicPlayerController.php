@@ -21,7 +21,7 @@ class PublicPlayerController extends AbstractController
             throw new NotFoundHttpException();
         }
 
-        $url = "{$rtmpHttpFlvBaseUrl}/$stream->getSlug()/index.m3u8";
+        $url = "{$rtmpHttpFlvBaseUrl}/{$stream->getSlug()}/index.m3u8";
 
         return $this->render('public_player.html.twig', [
             'url' => $url,
